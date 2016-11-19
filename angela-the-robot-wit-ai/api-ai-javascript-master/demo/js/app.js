@@ -9,7 +9,7 @@ SERVER_PROTO = 'wss';
 SERVER_DOMAIN = 'api-ws.api.ai';
 TTS_DOMAIN = 'api.api.ai';
 SERVER_PORT = '4435';
-ACCESS_TOKEN = 'db6b486f323c410a82d597f2e1ad6a5c';
+ACCESS_TOKEN = '00000000000000000000000000000000';
 SERVER_VERSION = '20150910';
 
 window.onload = function () {
@@ -48,7 +48,7 @@ function App() {
                 "v": SERVER_VERSION,
                 "query": query,
                 "timezone": "GMT+6",
-                "lang": "ru",
+                "lang": "en",
                 //"contexts" : ["weather", "local"],
                 "sessionId": sessionId
             };
@@ -86,7 +86,7 @@ function App() {
             serverVersion: SERVER_VERSION,
             token: ACCESS_TOKEN,// Use Client access token there (see agent keys).
             sessionId: sessionId,
-            lang: 'ru',
+            lang: 'en',
             onInit: function () {
                 console.log("> ON INIT use config");
             }
@@ -118,16 +118,16 @@ function App() {
              * You can send json through websocet.
              * For example to initialise dialog if you have appropriate intent.
              */
-          //  apiAi.sendJson({
-          //      "v": "20150512",
-          //      "query": "hello",
-          //      "timezone": "GMT+6",
-          //      "lang": "ru",
+            apiAi.sendJson({
+                "v": "20150512",
+                "query": "hello",
+                "timezone": "GMT+6",
+                "lang": "en",
                 //"contexts" : ["weather", "local"],
-          //      "sessionId": sessionId
-          //  });
+                "sessionId": sessionId
+            });
 
-    //    };
+        };
 
         apiAi.onClose = function () {
             console.log("> ON CLOSE");
@@ -151,7 +151,7 @@ function App() {
 
             speech = (data.result.fulfillment) ? data.result.fulfillment.speech : data.result.speech;
             // Use Text To Speech service to play text.
-            apiAiTts.tts(speech, undefined, 'ru-RUS');
+            apiAiTts.tts(speech, undefined, 'en-US');
 
             dialogue.innerHTML += ('user : ' + data.result.resolvedQuery + '\napi  : ' + speech + '\n\n');
             response.innerHTML = JSON.stringify(data, null, 2);
@@ -176,7 +176,7 @@ function App() {
         /**
          * Initialise Text To Speech service for playing text.
          */
-        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'ru-RUS');
+        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'en-US');
 
     }
 
@@ -200,3 +200,4 @@ function App() {
 function $(id) {
     return document.getElementById(id);
 }
+
