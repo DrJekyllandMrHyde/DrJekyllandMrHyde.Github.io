@@ -48,7 +48,7 @@ function App() {
                 "v": SERVER_VERSION,
                 "query": query,
                 "timezone": "GMT+6",
-                "lang": "en",
+                "lang": "ru",
                 //"contexts" : ["weather", "local"],
                 "sessionId": sessionId
             };
@@ -86,7 +86,7 @@ function App() {
             serverVersion: SERVER_VERSION,
             token: ACCESS_TOKEN,// Use Client access token there (see agent keys).
             sessionId: sessionId,
-            lang: 'en',
+            lang: 'ru',
             onInit: function () {
                 console.log("> ON INIT use config");
             }
@@ -118,16 +118,16 @@ function App() {
              * You can send json through websocet.
              * For example to initialise dialog if you have appropriate intent.
              */
-            apiAi.sendJson({
-                "v": "20150512",
-                "query": "hello",
-                "timezone": "GMT+6",
-                "lang": "en",
+          //  apiAi.sendJson({
+          //      "v": "20150512",
+          //      "query": "hello",
+          //      "timezone": "GMT+6",
+          //      "lang": "ru",
                 //"contexts" : ["weather", "local"],
-                "sessionId": sessionId
-            });
+          //      "sessionId": sessionId
+          //  });
 
-        };
+    //    };
 
         apiAi.onClose = function () {
             console.log("> ON CLOSE");
@@ -151,7 +151,7 @@ function App() {
 
             speech = (data.result.fulfillment) ? data.result.fulfillment.speech : data.result.speech;
             // Use Text To Speech service to play text.
-            apiAiTts.tts(speech, undefined, 'en-US');
+            apiAiTts.tts(speech, undefined, 'ru-RUS');
 
             dialogue.innerHTML += ('user : ' + data.result.resolvedQuery + '\napi  : ' + speech + '\n\n');
             response.innerHTML = JSON.stringify(data, null, 2);
@@ -176,7 +176,7 @@ function App() {
         /**
          * Initialise Text To Speech service for playing text.
          */
-        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'en-US');
+        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'ru-RUS');
 
     }
 
