@@ -93,7 +93,7 @@ function send() {
     data: {
       'q': text, // The message to send the bot
       'session_id': "123abc",
-      'access_token' : accessToken // Authorisation key for using our bot
+      'access_token' : 'db6b486f323c410a82d597f2e1ad6a5c' // Authorisation key for using our bot
     },
     dataType: 'json',
     crossDomain: true,
