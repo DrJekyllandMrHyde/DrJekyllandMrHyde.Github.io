@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>gameTemplate by StewVed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="StewVedFavIcon.png" rel="icon">
+    <style>
+      html {
+        height: 98%;
+        margin: 1%;
+        padding: 0;
+        background-color: #202740;
+        background: linear-gradient(to right,#202840,#304460,#202840);
+      }
+
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #dfdbd2;
+        font-family: sans-serif;
+      }
+
+      .btn {
+          text-align: center;
+          text-decoration:none;
+          margin: 0;
+          padding: 1px 4px;
+          color: #000;
+          border: 1px solid #a7a7a7;
+          border-radius: 6px;
+      }
+
+      .btnGrey {
+          background-color: #d5d5d5;
+          background: linear-gradient(#eee, #999);
+          transition: background 0.5s;
+      }
+
+      .btnGrey:hover {
+          background-color: #dfdfdf;
+          background: linear-gradient(#fff, #aaa);
+      }
+
+      .btnGrey:active {
+          background: linear-gradient(#ddd, #888);
+          border: 1px solid #c28167;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var a = document.createElement("script");
+      a.src = "loader.js",
+      document.head.appendChild(a)
+    </script>
+    <h1 style="color:#fff;text-shadow:0 0 6px;font-size:2.75em;margin-bottom:0;">gameTemplate</h1>
+    <h2 style="margin-top:0;">A canvas template for a HTML5 game</h2>
+    <a href="https://github.com/StewVed/gameTemplate" class="btn btnGrey">View on GitHub</a>
+    <a href="https://github.com/StewVed/gameTemplate/zipball/master" class="btn btnGrey">Download .zip</a>
+    <a href="https://github.com/StewVed/gameTemplate/tarball/master" class="btn btnGrey">Download .tar.gz</a>
+    <h3 style="text-align:center;margin-bottom:0;">
+      <a id="theGame" class="anchor" href="#theGame"></a>
+      The game template in action:
+
+    </h3>
+    <div id="gameContainer" style="left:0;position:relative;background:radial-gradient(#888, #444);margin:0 auto;">
+      <div id="loading" style="position:relative;"></div>
+    </div>
+    <div id=bugN>
+      <h1 style=margin-bottom:0;font-size:1.75em>StewVed's standard notice:</h1>
+      <p style=font-size:1.5em;color:red;margin-top:0>
+        Warning: May contain Bugs!<br>
+        Cannot guarantee Bug free!<br>Produced on a system where Buggy products are also made!
+  
+      </p>
+    </div>
+    <div id=crn>
+      <h2>
+        Created by <span class=toolTipclass id=cpContact>Stewart Robinson</span>
+        (StewVed)
+  
+      </h2>
+    </div>
+    <script>
+      resizeGame();
+      function resizeGame() {
+        var gWidth = document.body.offsetWidth;
+        document.body.style.fontSize = gWidth * .2 + '%';
+        var gHeight = (gWidth / (16 / 9));
+        if (gHeight > document.body.offsetHeight) {
+          gHeight = document.body.offsetHeight;
+          gWidth = gHeight * (16 / 9);
+        }
+        document.getElementById('gameContainer').style.width = gWidth + 'px';
+        document.getElementById('gameContainer').style.height = gHeight + 'px';
+        if (window['resizeGame2']) {
+          resizeGame2();
+        }
+      }
+    </script>
+  </body>
+</html>
