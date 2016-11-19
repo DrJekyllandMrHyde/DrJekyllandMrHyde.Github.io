@@ -1,0 +1,30 @@
+body {
+
+  line-height: 1.5;
+  color: #FFFFCC
+;
+  background: url('../images/rick-and-morty.jpg');
+
+  /* Full Page Background Receipe */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Bangers';
+  t
+}
+
+.container {
+  
+  width: 425px;
+  margin: 40px;
+  
+
+}
+
+iframe {text-align: center;
+}
+
+h1 {
+  text-align: center;
+
+}
