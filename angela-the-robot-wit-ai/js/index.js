@@ -1,4 +1,4 @@
-var accessToken = "TWU4M6F66HBB25ZMXEUNPKBVX5VF5VZG",
+var accessToken = "81d6a7c6f91c4bbdb83d4863115b2240",
       appId = "ec7424ff360f4084878df87d7f81b73a",
       baseUrl = "https://api.wit.ai/",
       $speechInput, // The input element, the speech box
