@@ -9,7 +9,7 @@ SERVER_PROTO = 'wss';
 SERVER_DOMAIN = 'api-ws.api.ai';
 TTS_DOMAIN = 'api.api.ai';
 SERVER_PORT = '4435';
-ACCESS_TOKEN = '00000000000000000000000000000000';
+ACCESS_TOKEN = '36fc1209a0ac4206b29d52e9ef35e407';
 SERVER_VERSION = '20150910';
 
 window.onload = function () {
@@ -48,7 +48,7 @@ function App() {
                 "v": SERVER_VERSION,
                 "query": query,
                 "timezone": "GMT+6",
-                "lang": "en",
+                "lang": "ru",
                 //"contexts" : ["weather", "local"],
                 "sessionId": sessionId
             };
@@ -120,9 +120,9 @@ function App() {
              */
             apiAi.sendJson({
                 "v": "20150512",
-                "query": "hello",
+                "query": "123123",
                 "timezone": "GMT+6",
-                "lang": "en",
+                "lang": "ru",
                 //"contexts" : ["weather", "local"],
                 "sessionId": sessionId
             });
@@ -151,7 +151,7 @@ function App() {
 
             speech = (data.result.fulfillment) ? data.result.fulfillment.speech : data.result.speech;
             // Use Text To Speech service to play text.
-            apiAiTts.tts(speech, undefined, 'en-US');
+            apiAiTts.tts(speech, undefined, 'ru-RUS');
 
             dialogue.innerHTML += ('user : ' + data.result.resolvedQuery + '\napi  : ' + speech + '\n\n');
             response.innerHTML = JSON.stringify(data, null, 2);
@@ -176,7 +176,7 @@ function App() {
         /**
          * Initialise Text To Speech service for playing text.
          */
-        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'en-US');
+        apiAiTts = new TTS(TTS_DOMAIN, ACCESS_TOKEN, undefined, 'ru-RUS');
 
     }
 
