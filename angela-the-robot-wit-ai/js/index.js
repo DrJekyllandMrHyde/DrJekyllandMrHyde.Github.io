@@ -1,6 +1,5 @@
-var accessToken = "81d6a7c6f91c4bbdb83d4863115b2240",
-      appId = "36fc1209a0ac4206b29d52e9ef35e407",
-      baseUrl = "https://api.wit.ai/",
+var accessToken = "db6b486f323c410a82d597f2e1ad6a5c";
+var baseUrl = "https://api.api.ai/v1/";
       $speechInput, // The input element, the speech box
       $recBtn, // Toggled recording button value
       recognition, // Used for accessing the HTML5 Speech Recognition API
