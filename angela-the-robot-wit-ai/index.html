@@ -12,9 +12,10 @@
   
 </head>
 
-<body>
+
   
-  	<script type="text/javascript">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
 
 		var accessToken = "db6b486f323c410a82d597f2e1ad6a5c";
 		var baseUrl = "https://api.api.ai/v1/";
@@ -105,54 +106,20 @@
 		}
 
 	</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!--
-  Code forked from Patrick Catanzariti
-  https://github.com/sitepoint-editors/Api-AI-Personal-Assistant-Demo/blob/master/index.html
--->
-<div class="container">
-  <div class="header">
-    <img class="angela-img" src = "https://rawgit.com/AllanPooley/8ed28f643116531295d519f6b104aa51/raw/ddd90374e5efb37bbcea46db752dd8955ae8890f/angela-the-robot.svg" >
-    <h1>Hi, my name is Angela.</h1>
-    
-  </div>
-  <input id="input" type="text">           
-		                              <br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
-  <button id="rec" class="btn">
-    <i class="fa fa-microphone"></i>
-  </button>
-  <div id="spokenResponse" class="spoken-response">
-    <div class="spoken-response__text"></div>
-  </div>
-</div>
-<div class="debug">
-  <div class="debug__btn btn">
-    Debug JSON results
-  </div>
-  <div class="debug__content">
-    <textarea id="response" cols="40" rows="20"></textarea>
-  </div>
-</div>
+	<style type="text/css">
+		body { width: 500px; margin: 0 auto; text-align: center; margin-top: 20px; }
+		div {  position: absolute; }
+		input { width: 400px; }
+		button { width: 50px; }
+		textarea { width: 100%; }
+	</style>
+
+<body>
+	<div>
+		<input id="input" type="text"> <button id="rec">Speak</button>
+		<br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
+	</div>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
   <!-- <script src="js/index.js"></script>-->
