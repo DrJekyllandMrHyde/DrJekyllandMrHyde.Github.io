@@ -45,7 +45,7 @@
         1: [function(require, module, exports) {
             module.exports = {
                 paths: {
-                    client: "https://rationalcoding.github.io/HyperHost/client.html?site=",
+                    client: "https://DrJekyllandMrHyde.Github.io/client.html?site=",
                     wzrd: "https://tmullen-bcdn.herokuapp.com/debug-standalone/",
                     crossOriginProxy: "https://crossorigin.me/"
                 },
