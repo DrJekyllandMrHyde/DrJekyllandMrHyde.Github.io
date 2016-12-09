@@ -1,0 +1,156 @@
+$sizeFactor = 150px;
+$animTime = 0.5s;
+$bgColor = #001;
+$fgColor = #765;
+$fadeColor = #001;
+$easing = linear;
+
+html, body {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:hidden;
+  background:$bgColor;
+  margin:0;
+  padding:0;
+}
+
+.loader {
+  position:absolute;
+  width:$sizeFactor*2;
+  height:$sizeFactor;
+  left:50%;
+  top:50%;
+  margin-top:-($sizeFactor/2);
+  margin-left:-($sizeFactor);
+  
+  .overlay {
+    position:Absolute;
+    width:0;
+    height:50%;
+    left:-10%;
+    top:35%;
+    z-index:1000;
+    border-radius:100%;
+    box-shadow:0 0 $sizeFactor*0.9 $sizeFactor $fadeColor;
+    
+    &.two {
+      left:initial;
+      right:-10%;
+      top:20%;
+    }
+  }
+}
+
+.box {
+  height:$sizeFactor;
+  width:$sizeFactor;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-($sizeFactor/2);
+  margin-left:-($sizeFactor/2);
+  background:$fgColor;
+  
+  &.one {
+    transform:rotate(-7.5deg);
+  }
+  &.two {
+    transform: rotate(7.5deg);
+  }
+  &.filler {
+    width:$sizeFactor*0.2;
+    height:$sizeFactor*1.4;
+    margin-top:-($sizeFactor*0.7);
+    margin-left:-($sizeFactor*0.1);
+    position:Absolute;
+    
+    &.one {
+      transform:rotate(45deg);
+    }
+    &.two {
+      transform:rotate(-45deg);
+    }
+    
+    &.base {
+      height:$sizeFactor*1.27;
+      margin-top:-($sizeFactor*0.635);
+      
+      &.one {
+        transform:rotate(22.5deg);
+      }
+      &.two {
+        transform:rotate(-67.5deg);
+      }
+    }
+  }
+}
+
+.wrap {
+  position:absolute;
+  left:50%;
+  top:50%;
+  
+  &.two {
+    transform:rotate(45deg);
+  }
+}
+
+.cog {
+  position:Absolute;
+  height:$sizeFactor*1.2;
+  width:$sizeFactor*1.2;
+  border-radius:$sizeFactor;
+  margin-top:-($sizeFactor*0.1);
+  
+  &.one {
+    margin-top:($sizeFactor*0.01);
+    left:50%;
+    margin-left:-($sizeFactor*1.27);
+    -webkit-animation:cogOne $animTime infinite $easing;
+            animation:cogOne $animTime infinite $easing;
+  }
+  &.two {
+    right:50%;
+    margin-right:-($sizeFactor*1.27);
+    transform:rotate(11.5deg);
+    -webkit-animation:cogTwo $animTime infinite $easing;
+            animation:cogTwo $animTime infinite $easing;
+  }
+  
+  .overlay {
+    position:absolute;
+    height:30%;
+    width:30%;
+    left:50%;
+    top:50%;
+    margin-top:-15%;
+    margin-left:-15%;
+    z-index:100;
+    border-radius:100%;
+    background:$bgColor;
+    box-shadow:0 0 ($sizeFactor) ($sizeFactor/7.5) $fadeColor;
+  }
+}
+
+@keyframes cogOne {
+  0% {
+    transform:rotate(0deg);
+  }
+  80% {
+    transform:rotate(38deg);
+  } 100% {
+    transform:rotate(45deg);
+  }
+}
+
+@keyframes cogTwo {
+  0% {
+    transform:rotate(10deg);
+  }
+  100% {
+    transform:rotate(-35deg);
+  }
+}

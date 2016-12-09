@@ -1,0 +1,193 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #001;
+  margin: 0;
+  padding: 0;
+}
+.loader {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  margin-top: -75px;
+  margin-left: -150px;
+}
+.loader .overlay {
+  position: Absolute;
+  width: 0;
+  height: 50%;
+  left: -10%;
+  top: 35%;
+  z-index: 1000;
+  border-radius: 100%;
+  box-shadow: 0 0 135px 150px #001;
+}
+.loader .overlay.two {
+  left: initial;
+  right: -10%;
+  top: 20%;
+}
+.box {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -75px;
+  margin-left: -75px;
+  background: #765;
+}
+.box.one {
+  transform: rotate(-7.5deg);
+}
+.box.two {
+  transform: rotate(7.5deg);
+}
+.box.filler {
+  width: 30px;
+  height: 210px;
+  margin-top: -105px;
+  margin-left: -15px;
+  position: Absolute;
+}
+.box.filler.one {
+  transform: rotate(45deg);
+}
+.box.filler.two {
+  transform: rotate(-45deg);
+}
+.box.filler.base {
+  height: 190.5px;
+  margin-top: -95.25px;
+}
+.box.filler.base.one {
+  transform: rotate(22.5deg);
+}
+.box.filler.base.two {
+  transform: rotate(-67.5deg);
+}
+.wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.wrap.two {
+  transform: rotate(45deg);
+}
+.cog {
+  position: Absolute;
+  height: 180px;
+  width: 180px;
+  border-radius: 150px;
+  margin-top: -15px;
+}
+.cog.one {
+  margin-top: 1.5px;
+  left: 50%;
+  margin-left: -190.5px;
+  -webkit-animation: cogOne 0.5s infinite linear;
+  animation: cogOne 0.5s infinite linear;
+}
+.cog.two {
+  right: 50%;
+  margin-right: -190.5px;
+  transform: rotate(11.5deg);
+  -webkit-animation: cogTwo 0.5s infinite linear;
+  animation: cogTwo 0.5s infinite linear;
+}
+.cog .overlay {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  left: 50%;
+  top: 50%;
+  margin-top: -15%;
+  margin-left: -15%;
+  z-index: 100;
+  border-radius: 100%;
+  background: #001;
+  box-shadow: 0 0 150px 20px #001;
+}
+@-moz-keyframes cogOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(38deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes cogOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(38deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@-o-keyframes cogOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(38deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes cogOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(38deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@-moz-keyframes cogTwo {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-35deg);
+  }
+}
+@-webkit-keyframes cogTwo {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-35deg);
+  }
+}
+@-o-keyframes cogTwo {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-35deg);
+  }
+}
+@keyframes cogTwo {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-35deg);
+  }
+}
