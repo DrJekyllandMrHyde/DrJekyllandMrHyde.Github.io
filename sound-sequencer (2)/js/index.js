@@ -1,9 +1,3 @@
-// Matthew Roelle 2014
-// HTML/CSS/JS Sequencer, Bro
-
-// Shoutout to the jQuery Knob plugin, it's used here for all the knobby UI
-// https://github.com/aterrien/jQuery-Knob
-
 $(document).ready(function() {
   // ===== Pause/Play state
   var playState = true;
