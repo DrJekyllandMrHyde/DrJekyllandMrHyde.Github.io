@@ -1,0 +1,131 @@
+@import "compass/css3";
+
+$tab-bg: transparent;
+$tab-link: #222;
+$tab-active-bg: #fff;
+$tab-active-link: #000;
+$codepen-branding: #ccc;
+$code-bg: linear-gradient(45deg, #222, #111);
+$code-scroll: linear-gradient(left, #444, #333);
+
+.embed-nav {
+  background: $tab-bg;
+//  opacity: 0;
+  #the-body:hover & {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 550px) {
+  .embed-nav ul {
+    text-align: center;
+  }
+}
+.embed-nav a {
+  color: $tab-link;
+  text-transform: uppercase;
+  font-family: Futura-Bold, Futura, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: 6px 16px;
+  text-shadow: 0 0 1px transparent;
+}
+.embed-nav a.active {
+  @include background(linear-gradient(top, darken($tab-active-bg,15), $tab-active-bg));
+  background: $tab-active-bg;
+  color: $tab-active-link;
+}
+
+.embed-nav a.active:after {
+  border-top: 8px solid $tab-active-bg;
+}
+
+.embed-nav .cp-embed-logo {
+  fill: $codepen-branding!important;
+}
+.embed-nav .logo-wrap a {
+  color: transparent;
+  font-size: 0;
+  vertical-align: bottom;
+  padding: 10px 0 0;
+}
+@media (max-width: 440px) {
+  .embed-nav .logo-wrap {
+    display: none;
+  }
+}
+
+#output pre {
+  font-size: 13px;
+  line-height: 1.45;
+  @include background($code-bg);
+  color: #FFF;
+}
+#output pre, #output iframe {
+  -webkit-overflow-scrolling: touch;
+	&::-webkit-scrollbar {
+	  width: 10px;
+    height: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+    @include background($code-scroll);
+	}
+}
+
+
+.token.comment,.token.prolog,.token.doctype,.token.cdata {
+  color: #aaaaaa;
+}
+.token.comment {
+  font-style: italic;
+  background-color: rgba(195, 232, 183, 0.05);
+}
+.token.punctuation {
+  color: #c3c6c4;
+}
+.token.tag, .language-markup .token.punctuation {
+  color: #cc338a;
+}
+.token.attr-name {
+  color: #cc76cc;
+}
+.token.attr-value {
+  color: #bdd9bf;
+//  background-color: rgba(56, 255, 175, 0.1);
+}
+.token.property {
+  color: #fff;
+}
+.token.boolean,.token.number {
+  color: #9eaeff;
+}
+.token.selector {
+  color: #c867e0;
+}
+.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string {
+  color: #8592E7;
+}
+.token.atrule,.token.keyword {
+  color: #70b3c7;
+}
+.token.string {
+  color: #dbcac0;
+  background-color: rgba(235, 119, 56, 0.2);
+}
+.token.function {
+  color: #B8CF9B;
+}
+.token.important {
+  color: #cc4937;
+}
+.language-css {
+  color: #9eaeff;
+}
+.language-css .token.punctuation, .token.regex {
+  color: #FFF;
+}
+
+
+.embed-shell {
+  box-sizing: border-box;
+  padding: 6%;
+}
