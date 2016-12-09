@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePlayer</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id = "header"> 
+		<h3 id = "title">CodePlayer</h3>
+		<div id = "buttons">
+			<button id = "html" class = "b">html</button>
+			<button id = "css" class = "b">css</button>
+			<button id = "js" class = "b">js</button>
+			<button id = "result" class = "b">result</button>
+		</div>
+		<button id = "run">Run</button>
+	</div>
+
+	<div class = "clear"></div>
+
+	<div class = "codeContainer" id = "htmlContainer">
+		<div class = "codeLabel">HTML</div>
+		<textarea id = "htmlCode">Example Code</textarea>
+	</div>
+
+	<div class = "codeContainer" id = "cssContainer">
+		<div class = "codeLabel">CSS</div>
+		<textarea id = "cssCode">Example Code</textarea>
+	</div>
+
+	<div class = "codeContainer" id = "jsContainer">
+		<div class = "codeLabel">JS</div>
+		<textarea id = "jsCode">Example Code</textarea>
+	</div>
+
+	<div class = "codeContainer" id = "resultContainer">
+		<div class = "codeLabel">Result</div>
+		<iframe id = "result"></iframe>
+	</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

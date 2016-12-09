@@ -1,0 +1,70 @@
+* {
+    		font-family: arial;
+    		margin: 0;
+    		padding: 0;
+    	}
+    	#header{
+    		width: 100%;
+    		height: 40px;
+    		border: 1px solid gray;
+    		margin: 0 auto;
+    		background-color: #EEEEEE;;
+    	}
+    	#title{
+    		padding: 10px 0 0 20px;
+    		font-weight: bold;
+    		float: left;
+    	}
+    	#buttons{
+    		margin-left: 45%;
+    	}
+    	button{
+    		height: 35px;
+    		width: 60px;
+    		margin-top: 3px;
+    		background-color: #EEEEEE;
+    		font-weight: bold;
+    		border-radius: 8px;
+    		border: 1px solid gray;
+    		float: left;
+    		font-size: 1.15em;
+    	}
+    	.b.active{
+    		background-color: #808080;
+    	}
+    	.b:focus{ outline: 0; }
+    	#run{
+    		float: right;
+    		margin-right: 30px;
+    		width: 75px;
+    	}
+    	.clear{
+    		clear:both;
+    	}
+    	.codeContainer{
+    		height: 100%;
+    		width: 50%;
+    		float: left;
+    		position: relative;
+    	}
+    	.codeContainer textarea{
+    		width: 100%;
+    		height: 100%;
+    		border: none;
+    		border-right: 1px solid gray;
+    		box-sizing: border-box;
+    	}
+    	.codeLabel{
+    		right: 10px;
+    		top: 10px;
+    		position: absolute;
+    	}
+    	#htmlContainer, #cssContainer, #jsContainer, #resultContainer{
+    		display: none;
+    	}	
+    	iframe{
+    		height: 100%;
+    		position: relative;
+    		left: 10px;
+    		border: none;
+    	}
