@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>CodePlayer</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images.png">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="menuBar">
+			<div id="logo">CodePlayer</div>
+			<div id="buttonDiv">
+				<button id="runButton">Run</button>
+			</div>
+			<ul id="toggles">
+				<li class="toggle selected">HTML</li>
+				<li class="toggle">CSS</li>
+				<li class="toggle">JS</li>
+				<li class="toggle selected" style="border:none">Result</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="codeContainer" id="HTMLContainer">
+			<div class="codeLabel">HTML</div>
+			<textarea id="htmlCode"></textarea>
+		</div>
+		<div class="codeContainer" id="CSSContainer">
+			<div class="codeLabel">CSS</div>
+			<textarea id="cssCode"></textarea>
+		</div>
+		<div class="codeContainer" id="JSContainer">
+			<div class="codeLabel">JS</div>
+			<textarea id="jsCode"></textarea>
+		</div>
+		<div class="codeContainer" id="ResultContainer">
+			<div class="codeLabel">Result</div>
+			<iframe id="resultFrame"></iframe>
+		</div>
+		<script src="script.js"></script>
+	</div>
+</body>
+</html>
