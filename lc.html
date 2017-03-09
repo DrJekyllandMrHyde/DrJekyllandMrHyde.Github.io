@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Location Tracker App</title>
+  <link rel="shortcut icon" href="https://cdn.wia.io/images/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://cdn.wia.io/sdk/js/v1/wia.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading"><h1>Location Tracking App</h1></div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <div id="map" style="height: 400px; width: 100%;"></div>
+                <script>
+                  var map;
+                  var map_marker;
+                  var lat = 0;
+                  var lng = 0;
+
+                  // Initialising the Google maps api
+                  function initializeMaps() {
+                    console.log("Google Maps Initialized");
+                    map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 16,
+                      center: {lat: lat, lng : lng, alt: 0}
+                    });
+
+                    map_marker = new google.maps.Marker({position: {lat: lat, lng: lng}, map: map});
+                    map_marker.setMap(map);
+                  }
+
+                  //function to call when we want to update our maps to reflect our received coordinates
+                  function updatePosition() {
+                    map.setCenter({lat: lat, lng : lng, alt: 0});
+                    map_marker.setPosition({lat: lat, lng : lng, alt: 0});
+                  }
+
+                  // Initialize the Wia Api with our application key from our dashboard
+                  Wia.initialize({
+                    appKey: "Your application key"
+                  });
+
+                  // Connect to a stream
+                  Wia.stream.connect({
+                    onSuccess: function() {
+                      initializeMaps();
+                      console.log("Stream Connected");
+                      Wia.locations.subscribe(
+                        {
+                          device: "Your device Id"
+                        },
+                        function(location) {
+                          // if a location event is received execute the following code
+                          if (location) {
+                            // Inject our location data values into the html frontend
+                            document.getElementById("lat").innerHTML = location.latitude;
+                            document.getElementById("lng").innerHTML = location.longitude;
+                            document.getElementById("alt").innerHTML = location.altitude;
+                            document.getElementById("time").innerHTML = Date(location.timestamp);
+
+                            // Assign our current coordinates to the latitude & longitude variables
+                            lat = location.latitude;
+                            lng = location.longitude;
+                            updatePosition();
+                          }
+                        }
+                      );// end Wia Locations Subscribe
+                    }
+                  });// end Wia Stream Connect
+                </script>
+                <br>
+                <p><b>Latitude: </b><span id="lat"></span></p>
+                <p><b>Longitude: </b><span id="lng"></span></p>
+                <p><b>Altitude: </b><span id="alt"></span></p>
+                <p><b>Last Updated: </b><span id="time"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
